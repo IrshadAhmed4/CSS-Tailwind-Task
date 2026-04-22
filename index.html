@@ -30,14 +30,14 @@
       <p class="text-gray-500 mt-2">Check out our trendy products</p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div id="product-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
     
       <div class="mt-12 bg-white rounded-lg shadow-md p-6">
       <h2 class="text-2xl font-bold text-gray-800 mb-4">Shopping Cart</h2>
       <div id="cart-items"></div>
     </div>
   </main>
-
+  <div>
   <script>    
     const products = [
       { id: 1, name: "iPhone 15", 
@@ -127,10 +127,10 @@
                 if (cart[i].quantity > 1) {
                     cart[i].quantity--;
                 } else {
-                    // If quantity is 1, remove it from the cart
+                    
                     cart.splice(i, 1);
                 }
-                break; // Stop loop once item is found and updated
+                break; 
             }
         }
         updateCartUI();
@@ -139,7 +139,7 @@
     function removeFromCart(productId) {
       for (let i = 0; i < cart.length; i++) {
         if (cart[i].id === productId) {
-          cart.splice(i, 1); // Remove the item from the array
+          cart.splice(i, 1); 
           break;
         }
       }
@@ -188,7 +188,7 @@
     renderProducts();
     updateCartUI();
   </script>  
+</div>
 
-    </div>
 </body>
 </html>
